@@ -1,0 +1,47 @@
+[2022-11-05 17:55:19,229][ml_project][INFO] - Prediction config:
+input_data_path: data/heart_cleveland.csv
+output_data_path: models/prediction.csv
+model_path: models/model.pkl
+metrics_path: models/metrics.json
+feature_params:
+  categorical_features:
+  - sex
+  - cp
+  - fbs
+  - restecg
+  - exang
+  - slope
+  - ca
+  - thal
+  numerical_features:
+  - age
+  - trestbps
+  - chol
+  - thalach
+  - oldpeak
+  features_to_drop: []
+  target_col: condition
+
+[2022-11-05 17:55:19,230][ml_project][INFO] - Loading data...
+[2022-11-05 17:55:19,233][project.data.make_dataset][INFO] - data.shape is (297, 14)
+[2022-11-05 17:55:19,233][ml_project][INFO] - Loading pipeline...
+[2022-11-05 17:55:19,255][project.models.predict_model][INFO] - Loaded pipeline: Pipeline(steps=[('transformer',
+                 ColumnTransformer(transformers=[('categorical_pipeline',
+                                                  Pipeline(steps=[('impute',
+                                                                   SimpleImputer(strategy='most_frequent')),
+                                                                  ('ohe',
+                                                                   OneHotEncoder(handle_unknown='ignore'))]),
+                                                  ['sex', 'cp', 'fbs',
+                                                   'restecg', 'exang', 'slope',
+                                                   'ca', 'thal']),
+                                                 ('numerical_pipeline',
+                                                  Pipeline(steps=[('impute',
+                                                                   SimpleImputer())]),
+                                                  ['age', 'trestbps', 'chol',
+                                                   'thalach', 'oldpeak'])])),
+                ('model', RandomForestClassifier(random_state=42))])
+[2022-11-05 17:55:19,255][ml_project][INFO] - Making predictions...
+[2022-11-05 17:55:19,272][project.models.predict_model][INFO] - predictions.shape is (297,)
+[2022-11-05 17:55:19,272][ml_project][INFO] - Saving predictions...
+[2022-11-05 17:55:19,279][ml_project][INFO] - Predictions saved to models/prediction.csv
+[2022-11-05 17:55:19,279][ml_project][INFO] - Done.

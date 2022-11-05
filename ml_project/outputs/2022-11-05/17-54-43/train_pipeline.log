@@ -1,0 +1,62 @@
+[2022-11-05 17:54:43,544][ml_project][INFO] - Training config:
+input_data_path: data/heart_cleveland.csv
+output_model_path: models/model.pkl
+metrics_path: models/metrics.json
+split_params:
+  random_state: 42
+  val_size: 0.2
+feature_params:
+  categorical_features:
+  - sex
+  - cp
+  - fbs
+  - restecg
+  - exang
+  - slope
+  - ca
+  - thal
+  numerical_features:
+  - age
+  - trestbps
+  - chol
+  - thalach
+  - oldpeak
+  features_to_drop: []
+  target_col: condition
+train_params:
+  model_type: RandomForestClassifier
+  random_state: 42
+
+[2022-11-05 17:54:43,545][ml_project][INFO] - Start train pipeline with params TrainingPipelineParams(input_data_path='data/heart_cleveland.csv', output_model_path='models/model.pkl', metrics_path='models/metrics.json', split_params=SplitParams(random_state=42, val_size=0.2), feature_params=FeatureParams(categorical_features=['sex', 'cp', 'fbs', 'restecg', 'exang', 'slope', 'ca', 'thal'], numerical_features=['age', 'trestbps', 'chol', 'thalach', 'oldpeak'], features_to_drop=[], target_col='condition'), train_params=TrainParams(model_type='RandomForestClassifier', random_state=42)).
+[2022-11-05 17:54:43,548][project.data.make_dataset][INFO] - data.shape is (297, 14)
+[2022-11-05 17:54:43,549][project.data.make_dataset][INFO] - train_data.shape is (237, 14)
+[2022-11-05 17:54:43,550][project.data.make_dataset][INFO] - val_data.shape is (60, 14)
+[2022-11-05 17:54:43,550][ml_project][INFO] - Building transformer...
+[2022-11-05 17:54:43,557][project.features.build_features][INFO] - transformer is ColumnTransformer(transformers=[('categorical_pipeline',
+                                 Pipeline(steps=[('impute',
+                                                  SimpleImputer(strategy='most_frequent')),
+                                                 ('ohe',
+                                                  OneHotEncoder(handle_unknown='ignore'))]),
+                                 ['sex', 'cp', 'fbs', 'restecg', 'exang',
+                                  'slope', 'ca', 'thal']),
+                                ('numerical_pipeline',
+                                 Pipeline(steps=[('impute', SimpleImputer())]),
+                                 ['age', 'trestbps', 'chol', 'thalach',
+                                  'oldpeak'])])
+[2022-11-05 17:54:43,557][ml_project][INFO] - Fitting transformer...
+[2022-11-05 17:54:43,569][ml_project][INFO] - Preparing train data...
+[2022-11-05 17:54:43,575][project.features.build_features][INFO] - data.shape is (237, 28)
+[2022-11-05 17:54:43,575][project.features.build_features][INFO] - target.shape is (237,)
+[2022-11-05 17:54:43,575][ml_project][INFO] - Training model...
+[2022-11-05 17:54:43,686][project.models.train_model][INFO] - Model successfully fitted.
+[2022-11-05 17:54:43,686][ml_project][INFO] - Preparing validation data...
+[2022-11-05 17:54:43,691][project.features.build_features][INFO] - data.shape is (60, 28)
+[2022-11-05 17:54:43,691][project.features.build_features][INFO] - target.shape is (60,)
+[2022-11-05 17:54:43,691][ml_project][INFO] - Making predictions on validation data...
+[2022-11-05 17:54:43,701][project.models.predict_model][INFO] - predictions.shape is (60,)
+[2022-11-05 17:54:43,701][ml_project][INFO] - Evaluating model...
+[2022-11-05 17:54:43,702][project.models.train_model][INFO] - Metrics are: {'accuracy': 0.7666666666666667, 'roc_auc': 0.7678571428571428}
+[2022-11-05 17:54:43,703][ml_project][INFO] - Saving metrics...
+[2022-11-05 17:54:43,703][ml_project][INFO] - Saving pipeline...
+[2022-11-05 17:54:43,714][project.models.train_model][INFO] - Pipeline saved to models/model.pkl
+[2022-11-05 17:54:43,714][ml_project][INFO] - Done.

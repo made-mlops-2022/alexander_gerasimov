@@ -1,0 +1,7 @@
+# @package _global_
+input_data_path: "data/heart_cleveland.csv"
+output_data_path: "models/prediction.csv"
+model_path: "models/model.pkl"
+metrics_path: "models/metrics.json"
+defaults:
+  - feature_params: default
