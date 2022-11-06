@@ -1,0 +1,16 @@
+Description for criteria 0 and 1
+Main:
+0. The architecture of the solution is described
+1. Implemented self-assessment by criteria
+2. EDA was completed, a script was also written to generate a report
+3. A function was written to train the model, the call was designed as a command line utility, instructions for launching were written in readme
+4. A predict function/class has been written (the call is designed as a command line utility), which will take as input an artifact/s from training, a test sample (without labels) and write a predict along a given path, the call instruction is written in readme
+5. The project has a modular structure
+6. Used loggers
+7. Tests were written for individual modules and for the learning run and predict
+8. For tests, synthetic data is generated that is close to real
+10. Data classes are used for entities from the config
+11. Written and tested custom transformer
+12. All dependencies are fixed in the project
+Additional points:
+- hydra used for configuration
