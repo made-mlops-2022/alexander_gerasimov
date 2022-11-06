@@ -12,5 +12,8 @@ Main:
 10. Data classes are used for entities from the config
 11. Written and tested custom transformer
 12. All dependencies are fixed in the project
+13. Added github actions
 Additional points:
 - hydra used for configuration
+
+In my opinion, all criteria are met in full
