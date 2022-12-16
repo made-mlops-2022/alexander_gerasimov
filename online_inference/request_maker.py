@@ -10,7 +10,7 @@ if __name__ == "__main__":
     print("Request example(first sample):")
     print(request_data[0])
     response = requests.post(
-        "http://0.0.0.0:8000/predict", json.dumps(request_data)
+        "http://localhost:8000/predict", json.dumps(request_data)
     )
     print(f"Response status: {response.status_code}")
     print("Response example(first sample):")
