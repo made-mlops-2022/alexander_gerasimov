@@ -10,7 +10,7 @@ docker build -t online_inference .
 ```
 ### From DockerHub
 ```
-docker pull online_inference
+docker push alexg25/online_inference_mlops:latest
 ```
 ## Usage
 
