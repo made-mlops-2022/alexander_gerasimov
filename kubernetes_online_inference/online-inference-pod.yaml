@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: online-inference
+  labels:
+    app: online-inference
+spec:
+  containers:
+    - image: alexg25/online_inference_mlops:latest
+      name: online-inference
+      ports:
+        - containerPort: 7000
